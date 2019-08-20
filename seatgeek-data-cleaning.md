@@ -1,3 +1,4 @@
+
 # Dove into SeatGeek New York Concert Dataset to Clean Data for Future Visualization and Analysis
 
 ## Project Description
@@ -203,9 +204,9 @@ None
 ```
 
 *Let's investigate the events with ticket prices over 1000. I show only the first 5. Remove head() to see the rest.*<br>
-1. They consist mostly of Madonna concerts for different dates. The highest priced tickets soar over 20000.
-2. Some of the other concerts' average prices are under 100 yet the highest ticket is way over 1000.
-3. There's about 200 high priced events
+1. They consist mostly of Madonna concerts for different dates. The highest priced tickets soar over 20000. 
+2. Some of the other concerts' average prices are under 100 yet the highest ticket is way over 1000. 
+3. There's about 200 high priced events 
 
 If I replaced the average_price and median_price of tickets with the median, I think they will fit right in.
 
@@ -338,7 +339,7 @@ df['median_price'].fillna(df['median_price'].median(), inplace=True)
 
 Since I plan on visualizing this data, I'm going to leave highest price and lowest price missing because I want to keep that price as close as possible for people like myself to see the lowest and highest prices as they are.
 
-<div class="alert alert-block alert-info">
+<div class="alert alert-block alert-info"> 
             <b>Fun fact:</b> The highest priced event is listed at $214749. Can you guess what artist? Hint: It's a pop artist. </div>
 
 ### Unavailable Venue Score
@@ -496,7 +497,7 @@ There's only three events so I'm going to go through the venues' url and manuall
 
 
 ```python
-df.loc[df.index == 72, 'venue_zipcode'] = '12207' #googled venue
+df.loc[df.index == 72, 'venue_zipcode'] = '12207' #googled venue 
 df.loc[df.index == 1649, 'venue_zipcode'] = '07712' #googled city
 df.loc[df.index == 1731, 'venue_zipcode'] = '10036' # zipcode is in the venue name
 ```
@@ -566,7 +567,7 @@ date_columns = ['announce_date', 'date&time_event', 'visible_until_utc']
 # Change all date_columns to datetime format using a loop
 for i in date_columns:
     df[i] = pd.to_datetime(df[i])
-
+    
 type(df['announce_date'][0]) # pandas._libs.tslibs.timestamps.Timestamp
 None
 ```
@@ -576,7 +577,7 @@ None
 
 ```python
 # Type_event I'm going to drop this column as all are concerts
-df[df['type_event'].str.contains('concert')]
+df[df['type_event'].str.contains('concert')] 
 df.drop(columns='type_event',inplace=True)
 ```
 
@@ -702,7 +703,7 @@ df.sample(3)
 
 In this project, we used our ny-concert data from SeatGeek. We took stock of missing data and decided how we were going to deal with NaN prices and 0 value columns. We went through pricing and replaced the missing average and median prices with the median price of each respective column. We decided to leave the highest and lowest price columns as is because there were really no tickets available for those events. Because the venue_score was linked to ticket sales, I replaced the 0 value venue_scores with the median score in congruence with what we did with the ticket prices. I left venue_capacity as is as I did not have an optimal way of handling it. I also left ticket listing count at missing because there were no tickets on sale for those events. I handled missing zipcodes by googling them, easily because there were only 3. Then I made missing performer_genres in to its own category. I converted the string date columns into datetime. Finally we dropped a redundant column as all events were concerts.
 
-It was tricky deciding what to do with missing values. At the back of my mind, it always occurred to me whether we put something there or not, the value is not 100% true. I think this is a limitation that I wonder if someone could tell me what would be the best way to handle a certain NaN value. Nonetheless, I tried to justify my reasoning for dealing with those values. In the future, I would like to use the datetime to get a look at what events occur during what time of the day.
+It was tricky deciding what to do with missing values. At the back of my mind, it always occurred to me whether we put something there or not, the value is not 100% true. I think this is a limitation that I wonder if someone could tell me what would be the best way to handle a certain NaN value. Nonetheless, I tried to justify my reasoning for dealing with those values. In the future, I would like to use the datetime to get a look at what events occur during what time of the day. 
 
 Happy to get feedback on my project. Thank you.
 
