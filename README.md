@@ -2,10 +2,10 @@
 # Dove into SeatGeek New York Concert Dataset to Clean Data for Future Visualization and Analysis
 
 ## Project Description
-Cleaning concert data from SeatGeek that were previously extracted using a data pipeline in my previous project. We will use pandas to examine what data is available, deal with missing values and tidy up formatting. This dataset may be used in several projects including but not limited to creating interactive dashboards showing upcoming events for someone trying to sell their tickets or see what events are available and k-means clustering to group the concerts by category. I'm curious to find out what unsupervised learning will discover!
+In this project, I cleaned concert data from SeatGeek that was extracted using a Python script from a past project. We will use pandas to examine what data is available, deal with missing values, and tidy up formatting. This dataset may be used in several projects including but not limited to creating interactive dashboards showing upcoming events for someone trying to sell their tickets or see what events are available and k-means clustering to group the concerts by category. I'm curious to find out what unsupervised learning will discover.
 
 ## Introduction
-It's a cliché that data cleaning takes 85% or so of a data scientists time. In this project, "I want to have multiple purposes for this data. 1) for an interactive dashboard and 2) machine learning if possible. I can get super ambitious, unrealistic at times, but would love to eventually see this dataset come to life!
+It's often said that data cleaning takes 85% or so of a data scientist's time. In this project, I want to have multiple purposes for this data. 1) for an interactive dashboard and 2) machine learning if possible. 
 
 ## Load Libraries and Dataset
 
